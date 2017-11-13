@@ -32,3 +32,4 @@ hs_err_pid*
 /.idea/core.iml
 /.idea/libraries/
 /.idea/modules/
+/src/main/dist/

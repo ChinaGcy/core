@@ -17,8 +17,8 @@ repositories {
 	maven {
 		url "http://tfelab.org:60002/content/groups/public"
 		credentials {
-			username 'developer'
-			password 'developer'
+			username developer
+			password developer_password
 		}
 	}
 	jcenter()
@@ -34,13 +34,19 @@ uploadArchives {
 	repositories {
 		mavenDeployer {
 			repository(url: 'http://tfelab.org:60002/content/repositories/releases/') {
-				authentication(userName: 'deployment', password: 'deployment')
+				authentication(userName: deployment, password: deployment_password)
 			}
 			snapshotRepository(url: 'http://tfelab.org:60002/content/repositories/snapshots/') {
-				authentication(userName: 'deployment', password: 'deployment')
+				authentication(userName: deployment, password: deployment_password)
 			}
 		}
 	}
+}
+
+[distZip, distTar].each { task -> configurations.archives.artifacts.removeAll
+		{ it.class.simpleName == "ArchivePublishArtifact" && it.archiveTask == task }
+
+	task.enabled = false
 }
 
 configurations {
