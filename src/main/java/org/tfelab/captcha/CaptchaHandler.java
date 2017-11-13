@@ -1,7 +1,7 @@
 /**
  *
  */
-package org.tfelab.captcha.test;
+package org.tfelab.captcha;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

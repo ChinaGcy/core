@@ -1,4 +1,4 @@
-package org.tfelab.captcha.test;
+package org.tfelab.captcha;
 
 import java.io.*;
 import java.net.URL;
