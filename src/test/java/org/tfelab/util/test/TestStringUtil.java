@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.tfelab.test;
+package org.tfelab.util.test;
 
 import org.junit.Test;
 import org.tfelab.txt.StringUtil;

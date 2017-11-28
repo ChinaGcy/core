@@ -1,4 +1,4 @@
-package org.tfelab.test;
+package org.tfelab.util.test;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.field.DataType;

@@ -64,6 +64,8 @@ dependencies {
 	compile group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '3.5.3'
 	compile group: 'org.seleniumhq.selenium', name: 'selenium-api', version: '3.5.3'*/
 
+	compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.1'
+
 	compile group: 'io.appium', name: 'java-client', version: '4.1.2'
 
 	compile 'net.lightbody.bmp:browsermob-core:2.1.4'

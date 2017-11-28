@@ -12,7 +12,7 @@ import org.tfelab.io.requester.chrome.action.ChromeDriverAction;
 import org.tfelab.io.requester.proxy.ProxyWrapper;
 import org.tfelab.json.JSON;
 import org.tfelab.txt.ChineseChar;
-import org.tfelab.txt.DateFormatUtil;
+import org.tfelab.txt.NumberFormatUtil;
 import org.tfelab.txt.StringUtil;
 import org.tfelab.txt.URLUtil;
 
@@ -342,7 +342,7 @@ public class Task {
 	public int getParamInt(String key) {
 		if(params.get(key) == null) return 0;
 		//return Integer.valueOf((int) params.get(key));
-		return DateFormatUtil.parseInt(String.valueOf(params.get(key)));
+		return NumberFormatUtil.parseInt(String.valueOf(params.get(key)));
 	}
 
 	public void setParam(String key, Object object) {

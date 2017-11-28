@@ -444,7 +444,7 @@ public class BasicRequester extends Requester {
 				if(task.getHeaders() != null) {
 					headers = task.getHeaders();
 				} else {
-					headers = HeaderBuilder.build(task.getUrl(), task.getCookies(), task.getRef());
+					headers = HeaderBuilder.build(task.getUrl(), cookies, task.getRef());
 				}
 				
 				ConnectionBuilder connBuilder = new ConnectionBuilder(task.getUrl(), task.getProxyWrapper());

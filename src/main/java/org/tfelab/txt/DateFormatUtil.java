@@ -1,12 +1,12 @@
 package org.tfelab.txt;
 
-import com.google.common.collect.ImmutableMap;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import java.nio.ByteBuffer;
 import java.text.ParseException;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -224,67 +224,5 @@ public class DateFormatUtil {
 		return v;
 	}
 
-	/**
-	 * 
-	 * @param in
-	 * @return
-	 */
-	public static double parseDouble(String in) {
 
-		double v = 0;
-		
-		Map<String, Double> map = new HashMap<>();
-
-		map.put("百", 100D);
-		map.put("千", 1000D);
-		map.put("万", 10000D);
-		map.put("百万", 100 * 10000D);
-		map.put("亿", 10000 * 10000D);
-		map.put("K", 1000D);
-		map.put("k", 1000D);
-		map.put("M", 1000000D);
-		map.put("m", 1000000D);
-		
-		List<Double> multis = new ArrayList<Double>();
-		Pattern p = Pattern.compile("百|千|万|百万|亿|k|K|m|M");
-		Matcher m = p.matcher(in);
-		while(m.find()){
-			multis.add(map.get(m.group()));
-		}
-		
-		in = in.trim();
-		boolean negative = false;
-		if(in.length() > 1 && in.subSequence(0, 1).equals("-")) {
-			negative = true;
-		}
-		
-		in = in.replaceAll("百|千|万|百万|亿|k|K|m|M|,", "").replaceAll("\\+|-", "").trim();
-		
-		if(in.matches("(\\d+\\.)?\\d+")){
-			v = Double.parseDouble(in);
-			for(Double ms : multis){
-				v *= ms;
-			}
-		}
-		
-		return negative ? -v : v;
-	}
-	
-	/**
-	 * 
-	 * @param in
-	 * @return
-	 */
-	public static float parseFloat(String in){
-		return (float) parseDouble(in);
-	}
-	
-	/**
-	 * 
-	 * @param in
-	 * @return
-	 */
-	public static int parseInt(String in){
-		return (int) parseDouble(in);
-	}
 }

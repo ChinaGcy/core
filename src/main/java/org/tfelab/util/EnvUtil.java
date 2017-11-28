@@ -6,9 +6,13 @@ package org.tfelab.util;
  * @date 2017.11.12
  */
 public class EnvUtil {
+
+	private static String os;
 	
 	public static boolean isHostLinux() {
-		String os = System.getProperty("os.name");
+		if(os == null) {
+			os = System.getProperty("os.name");
+		}
 		if (os != null && os.toLowerCase().startsWith("linux")) {
 			return true;
 		}

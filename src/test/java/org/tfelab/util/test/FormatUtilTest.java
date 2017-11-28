@@ -1,8 +1,9 @@
-package org.tfelab.test;
+package org.tfelab.util.test;
 
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 import org.tfelab.txt.DateFormatUtil;
+import org.tfelab.txt.NumberFormatUtil;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -73,15 +74,16 @@ public class FormatUtilTest {
 			"5323.4532435435435333333333333333333333333333333333333333333333333333333333333333333333333333333333333334",
 			"0.9万",
 			"9000亿",
-			"0.06万万"
+			"0.06万万",
+				"4T"
 		);
 		
 		for(String s : raw){
 			System.err.println(s + "\t");
 			try {
-				System.out.println(DateFormatUtil.parseDouble(s));
-				System.out.println(DateFormatUtil.parseFloat(s));
-				System.out.println(DateFormatUtil.parseInt(s));
+				System.out.println(NumberFormatUtil.parseDouble(s));
+				System.out.println(NumberFormatUtil.parseFloat(s));
+				System.out.println(NumberFormatUtil.parseInt(s));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
