@@ -1,4 +1,4 @@
-package org.tfelab.captcha;
+package org.tfelab.captcha.test;
 
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ public class TestCaptcha {
 		String key = "92506c6fadaa8d4d25c8b338dbea3220";
 		String img_fn = "src/test/java/org/tfelab/captcha/pin.png";
 
-		String pass = CaptchaHandler.bypass("src/test/java/org/tfelab/captcha/pin.png");
+		String pass = org.tfelab.captcha.CaptchaHandler.bypass("src/test/java/org/tfelab/captcha/pin.png");
 		System.err.println(pass);
 
 //		System.out.println("Decoding");

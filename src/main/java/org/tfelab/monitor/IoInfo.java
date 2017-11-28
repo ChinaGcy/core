@@ -37,7 +37,7 @@ public class IoInfo extends SysInfo {
 	@Override
 	public void probe() {
 
-		String diskInfo = LocalSensor.getLocalShellOutput("df -h");
+		String diskInfo = LocalSensor.getLocalShellOutput("df -m");
 		String rwInfo = LocalSensor.getLocalShellOutput("iostat");
 
 		String[] lines = null;
@@ -50,8 +50,8 @@ public class IoInfo extends SysInfo {
 				String[] result = line.split("\\s+");
 				if (result[5].equals("/")) {
 
-					disk_total = NumberFormatUtil.parseDouble(result[1]) / 1000000;
-					disk_free = NumberFormatUtil.parseDouble(result[3]) / 1000000;
+					disk_total = NumberFormatUtil.parseDouble(result[1]);
+					disk_free = NumberFormatUtil.parseDouble(result[3]);
 				}
 			}
 		}
@@ -66,8 +66,8 @@ public class IoInfo extends SysInfo {
 			}
 			if(found) {
 				String[] result = line.split("\\s+");
-				read = Float.parseFloat(result[2]);
-				writen = Float.parseFloat(result[3]);
+				read = Float.parseFloat(result[2]) / 1000;
+				writen = Float.parseFloat(result[3]) / 1000;
 			}
 		}
 

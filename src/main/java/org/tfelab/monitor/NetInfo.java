@@ -29,7 +29,7 @@ public class NetInfo extends SysInfo {
 		long startTime = System.currentTimeMillis();
 		String netInfo = LocalSensor.getLocalShellOutput("cat /proc/net/dev");
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

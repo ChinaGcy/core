@@ -75,8 +75,8 @@ public class CPUInfo extends SysInfo {
 		}
 
 		Collections.sort(temps);
-		max_temp = temps.get(temps.size()-1) / 100;
-		avg_temp = currTemp / (i * 100);
+		max_temp = temps.get(temps.size()-1);
+		avg_temp = currTemp / (i);
 
 	}
 }

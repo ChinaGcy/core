@@ -49,7 +49,8 @@ public class LocalSensor<Info extends SysInfo> {
 					logger.error(e);
 				}
 			}
-			pro.destroy();
+			if(pro != null)
+				pro.destroy();
 		}
 
 		return output;
